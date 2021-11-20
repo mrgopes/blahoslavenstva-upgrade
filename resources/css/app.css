@@ -1,4 +1,8 @@
-/* ./src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Paprika&display=swap'); /* ./src/index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #F8FCFD !important;
+}
