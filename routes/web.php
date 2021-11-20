@@ -16,39 +16,39 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
-    return Redirect::route('pismo');
+    return Redirect::route('pismo', [date('Y-m-d')]);
 });
 
-Route::get('/pismo', function () {
-    if (\App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first() == null) {
+Route::get('/{date}/pismo', function ($date) {
+    if (\App\Models\Upgrade::all()->where('date', $date)->first() == null) {
         return abort(404);
     }
     return Inertia::render('Home',
-        ['title' => 'Pismo', 'rightlink' => '/myslienka', 'content' => \App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first()->pismo]);
+        ['title' => 'Pismo', 'rightlink' => '/' . $date . '/myslienka', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->pismo]);
 })->name('pismo');
 
-Route::get('/myslienka', function () {
-    if (\App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first() == null) {
+Route::get('/{date}/myslienka', function ($date) {
+    if (\App\Models\Upgrade::all()->where('date', $date)->first() == null) {
         return abort(404);
     }
     return Inertia::render('Home',
-        ['title' => 'Myšlienka', 'leftlink' => '/pismo', 'rightlink' => '/zamyslenie', 'content' => \App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first()->myslienka]);
+        ['title' => 'Myšlienka', 'leftlink' => '/' . $date . '/pismo', 'rightlink' => '/' . $date . '/zamyslenie', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->myslienka]);
 })->name('myslienka');
 
-Route::get('/zamyslenie', function () {
-    if (\App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first() == null) {
+Route::get('/{date}/zamyslenie', function ($date) {
+    if (\App\Models\Upgrade::all()->where('date', $date)->first() == null) {
         return abort(404);
     }
     return Inertia::render('Home',
-        ['title' => 'Zamyslenie', 'leftlink' => '/myslienka', 'rightlink' => 'modlitba', 'content' => \App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first()->zamyslenie]);
+        ['title' => 'Zamyslenie', 'leftlink' => '/' . $date . '/myslienka', 'rightlink' => '/' . $date . '/modlitba', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->zamyslenie]);
 })->name('zamyslenie');
 
-Route::get('/modlitba', function () {
-    if (\App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first() == null) {
+Route::get('/{date}/modlitba', function ($date) {
+    if (\App\Models\Upgrade::all()->where('date', $date)->first() == null) {
         return abort(404);
     }
     return Inertia::render('Home',
-        ['title' => 'Modlitba', 'leftlink' => 'zamyslenie', 'content' => \App\Models\Upgrade::all()->where('date', date('Y-m-d'))->first()->modlitba]);
+        ['title' => 'Modlitba', 'leftlink' => '/' . $date . '/zamyslenie', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->modlitba]);
 })->name('modlitba');
 
 Route::get('/test', function () {
