@@ -6,3 +6,22 @@
 body {
     background-color: #F8FCFD !important;
 }
+
+.background {
+    width: 100%;
+    height: 100vh;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #F8FCFD !important;
+}
+
+.notfound-title {
+    font-weight: bolder;
+    @apply text-2xl text-center text-gray-900 mb-5;
+}
+
+.btn-nf {
+    color: white;
+    font-weight: bold;
+    background-color: #2556dc;
+    @apply py-2 px-6 rounded-3xl text-lg;
+}

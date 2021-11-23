@@ -31887,6 +31887,19 @@ body {
   background-color: #F8FCFD !important;
 }
 
+.background {
+  width: 100%;
+  height: 100vh;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.notfound-title {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;

@@ -1,0 +1,7 @@
+.challenge-toast {
+    @apply absolute bottom-0 left-0 ml-5 mb-5 text-left py-1 px-8 text-white flex items-center;
+    height: 70px;
+    border-radius: 100px;
+    background: #36CFFF;
+    box-shadow: 0 10px 50px rgba(86, 90, 94, 0.15);
+}
