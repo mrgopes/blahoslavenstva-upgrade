@@ -1,7 +1,7 @@
 <template>
     <div>
         <Challenge :challenge="challenge" v-if="challenge !== null && challenge !== undefined"/>
-        <Notifications/>
+        <!-- Notifications/-->
          <slot />
     </div>
 </template>
