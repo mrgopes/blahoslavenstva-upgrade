@@ -17,8 +17,8 @@ class CreateUpgradesTable extends Migration
             $table->id();
             $table->date('date');
             $table->longText('pismo');
-            $table->longText('myslienka');
             $table->longText('zamyslenie');
+            $table->longText('dozivota');
             $table->longText('modlitba');
         });
     }

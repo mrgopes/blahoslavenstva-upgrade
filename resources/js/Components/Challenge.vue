@@ -1,7 +1,8 @@
 <template>
     <a :href="challenge.link" class="challenge-toast" target="_blank">
         <div>
-        <p><strong>{{ challenge.title }}</strong></p>
+        <p v-if="challenge.title != null"><strong>{{ challenge.title }}</strong></p>
+        <p v-else><strong>Týždenná výzva</strong></p>
         Končí o {{ get_date_string(new Date(challenge.end) - new Date()) }}
         </div>
     </a>

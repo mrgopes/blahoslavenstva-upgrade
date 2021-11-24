@@ -1,0 +1,9 @@
+.notification-toast {
+    @apply absolute bottom-0 right-0 mr-5 mb-5 flex items-center justify-center text-3xl;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    color: #36CFFF;
+    background-color: white;
+    box-shadow: 0 10px 50px rgba(86, 90, 94, 0.15);
+}

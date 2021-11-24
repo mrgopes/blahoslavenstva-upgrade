@@ -5,10 +5,11 @@ import '../css/app.css'
 import base from "./Templates/base";
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import {faArrowLeft, faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import {faArrowLeft, faArrowRight, faBell} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faArrowLeft)
 library.add(faArrowRight)
+library.add(faBell)
 
 InertiaProgress.init()
 
