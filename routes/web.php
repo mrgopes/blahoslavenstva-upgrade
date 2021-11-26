@@ -33,7 +33,7 @@ Route::get('/{date}/pismo', function ($date) {
         }
     }
     return Inertia::render('Home',
-        ['title' => 'Písmo', 'rightlink' => '/' . $date . '/zamyslenie',
+        ['date' => $date, 'title' => 'Písmo', 'rightlink' => '/' . $date . '/zamyslenie',
             'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->pismo,
             'challenge' => \App\Models\Challenge::all()->where('start', '<=', date('Y-m-d'))->where('end', '>=', date('Y-m-d'))->first()
         ]);
@@ -49,7 +49,7 @@ Route::get('/{date}/zamyslenie', function ($date) {
         }
     }
     return Inertia::render('Home',
-        ['title' => 'Zamyslenie', 'leftlink' => '/' . $date . '/pismo', 'rightlink' => '/' . $date . '/do-zivota', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->zamyslenie,
+        ['date' => $date, 'title' => 'Zamyslenie', 'leftlink' => '/' . $date . '/pismo', 'rightlink' => '/' . $date . '/do-zivota', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->zamyslenie,
             'challenge' => \App\Models\Challenge::all()->where('start', '<=', date('Y-m-d'))->where('end', '>=', date('Y-m-d'))->first()
         ]);
 })->name('zamyslenie');
@@ -64,7 +64,7 @@ Route::get('/{date}/do-zivota', function ($date) {
         }
     }
     return Inertia::render('Home',
-        ['title' => 'Do života', 'leftlink' => '/' . $date . '/zamyslenie', 'rightlink' => '/' . $date . '/modlitba', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->dozivota,
+        ['date' => $date, 'title' => 'Do života', 'leftlink' => '/' . $date . '/zamyslenie', 'rightlink' => '/' . $date . '/modlitba', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->dozivota,
             'challenge' => \App\Models\Challenge::all()->where('start', '<=', date('Y-m-d'))->where('end', '>=', date('Y-m-d'))->first()]);
 })->name('do-zivota');
 
@@ -78,6 +78,6 @@ Route::get('/{date}/modlitba', function ($date) {
         }
     }
     return Inertia::render('Home',
-        ['title' => 'Modlitba', 'leftlink' => '/' . $date . '/do-zivota', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->modlitba,
+        ['date' => $date, 'title' => 'Modlitba', 'leftlink' => '/' . $date . '/do-zivota', 'content' => \App\Models\Upgrade::all()->where('date', $date)->first()->modlitba,
             'challenge' => \App\Models\Challenge::all()->where('start', '<=', date('Y-m-d'))->where('end', '>=', date('Y-m-d'))->first()]);
 })->name('modlitba');

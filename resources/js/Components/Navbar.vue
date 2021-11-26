@@ -7,7 +7,7 @@
         </div>
         <div class="flex-none text-center">
             <p>
-                {{ new Date().getDate() }}. {{ new Date().getMonth() +1 }}. {{ new Date().getFullYear() }}
+                {{ new Date(date).getDate() }}. {{ new Date(date).getMonth() +1 }}. {{ new Date(date).getFullYear() }}
             </p>
             <h1 class="title">
                 {{ title }}
@@ -38,7 +38,8 @@ export default {
     props: {
         title: String,
         leftlink: String,
-        rightlink: String
+        rightlink: String,
+        date: String,
     },
 
     methods: {
