@@ -3,7 +3,7 @@
         <div>
         <p v-if="challenge.title != null"><strong>{{ challenge.title }}</strong></p>
         <p v-else><strong>Týždenná výzva</strong></p>
-        Končí o {{ get_date_string(new Date(challenge.end) - new Date()) }}
+        Končí o {{ get_date_string(new Date(challenge.end + " 23:59:59") - new Date()) }}
         </div>
     </a>
 </template>
@@ -18,8 +18,8 @@ export default {
     methods: {
         get_date_string(difference) {
             var final = ""
-            final += parseInt(difference / 86400000) + "d "
-            final += (parseInt((difference % 86400000) / 3600000) - 1) + "h "
+            final += Math.floor(difference / 86400000) - 1 + "d "
+            final += (parseInt((difference % 86400000) / 3600000)) + "h "
             final += parseInt(((difference % 86400000) % 3600000) / 60000) + "m"
             return final;
         }
