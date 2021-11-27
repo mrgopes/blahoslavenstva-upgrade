@@ -1,0 +1,15 @@
+{
+    "name": "oŽI Upgrade ONLINe",
+    "short_name": "oŽI Upgrade",
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#2556dc",
+    "background_color": "#fff",
+    "icons": [
+        {
+            "src": "",
+            "sizes": "",
+            "type": ""
+        },
+    ]
+}

@@ -7,6 +7,7 @@
     <script src="{{ mix('/js/app.js') }}" defer></script>
     <title>oŽI Upgrade ONLINE</title>
 
+    <link rel="manifest" href="/manifest.json"/>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script>
         window.OneSignal = window.OneSignal || [];
