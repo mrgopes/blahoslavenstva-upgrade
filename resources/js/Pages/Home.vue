@@ -1,7 +1,7 @@
 <template>
     <base>
         <Navbar :title="title" :leftlink="leftlink" :rightlink="rightlink" :date="date"/>
-        <div class="p-5">
+        <div class="pb-32 p-5">
             <div>
                 {{ content }}
             </div>
