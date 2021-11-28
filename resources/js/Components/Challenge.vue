@@ -3,7 +3,7 @@
         <div>
         <p v-if="challenge.title != null"><strong>{{ challenge.title }}</strong></p>
         <p v-else><strong>Týždenná výzva</strong></p>
-        Končí o {{ get_date_string(new Date(challenge.end + " 23:59:59") - new Date()) }}
+        Končí o {{ get_date_string(new Date((challenge.end + " 23:59:59").replace(/-/g, "/")) - new Date()) }}
         </div>
     </a>
 </template>
