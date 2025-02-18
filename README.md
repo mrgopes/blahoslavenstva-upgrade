@@ -3,3 +3,5 @@
 ## oŽI Upgrade ONLINE
 
 Progressive Web Application for viewing daily Bible readings online
+
+Not maintained anymore. For a preview of the functionality viist [ozi-upgrade.hstnw.eu/2021-11-29/pismo](https://ozi-upgrade.hstnw.eu/2021-11-29/pismo)
